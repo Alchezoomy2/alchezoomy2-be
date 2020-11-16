@@ -9,29 +9,29 @@ const client = require('../lib/client');
 describe('app routes', () => {
   describe('routes', () => {
     let token;
-  
+
     beforeAll(async done => {
       execSync('npm run setup-db');
-  
+
       client.connect();
-  
+
       const signInData = await fakeRequest(app)
         .post('/auth/signup')
         .send({
           email: 'jon@user.com',
           password: '1234'
         });
-      
+
       token = signInData.body.token; // eslint-disable-line
-  
+
       return done();
     });
-  
+
     afterAll(done => {
       return client.end(done);
     });
 
-    test('returns animals', async() => {
+    test('returns animals', async () => {
 
       const expectation = [
         {
@@ -61,5 +61,6 @@ describe('app routes', () => {
 
       expect(data.body).toEqual(expectation);
     });
+
   });
 });
