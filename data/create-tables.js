@@ -17,11 +17,44 @@ async function run() {
                     hash VARCHAR(512) NOT NULL
                 );           
                 CREATE TABLE meetings (
-                    id SERIAL PRIMARY KEY NOT NULL,
-                    name VARCHAR(512) NOT NULL,
-                    cool_factor INTEGER NOT NULL,
+                    uuid SERIAL PRIMARY KEY NOT NULL,
+                    host_id VARCHAR(512) NOT NULL,
+                    topic VARCHAR(512) NOT NULL,
+                    start_time VARCHAR(512) NOT NULL,
+                    share_url VARCHAR(512) NOT NULL,
+                    video_play_url VARCHAR(512) NOT NULL,
+                    audio_play_url VARCHAR(512) NOT NULL,
+                    transcript_url VARCHAR(512) NOT NULL,
+                    chat_file VARCHAR(512) NOT NULL,
+                    meeting_views INTEGER NOT NULL,
+                    meeting_fav VARCHAR(512) NOT NULL,
+                    duration INTEGER NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
             );
+                CREATE TABLE transcripts (
+                    uuid SERIAL PRIMARY KEY NOT NULL,
+                    time_start INTEGER NOT NULL,
+                    time_end INTEGER NOT NULL,
+                    speaker VARCHAR(512) NOT NULL,
+                    text VARCHAR(512) NOT NULL,
+                    keywords VARCHAR(512) NOT NULL,
+          );
+                CREATE TABLE chats (
+                    uuid SERIAL PRIMARY KEY NOT NULL,
+                    timestamp VARCHAR(512) NOT NULL,
+                    speaker VARCHAR(512) NOT NULL,
+                    text VARCHAR(512) NOT NULL,
+          );
+                CREATE TABLE favorites (
+                    uuid SERIAL PRIMARY KEY NOT NULL,
+                    host_id VARCHAR(512) NOT NULL,
+                    topic VARCHAR(512) NOT NULL,
+                    start_time INTEGER NOT NULL,
+                    timestamp VARCHAR(512) NOT NULL,
+                    speaker VARCHAR(512) NOT NULL,
+                    text VARCHAR(512) NOT NULL,
+                    owner_id INTEGER NOT NULL REFERENCES users(id)
+          );
         `);
 
     console.log('create tables complete');
