@@ -1,7 +1,9 @@
 const client = require('../lib/client');
 // import our seed data:
+const usersData = require('./users.js');
 const meetingData = require('./smpl-zoom-data.js');
-const studentUser = require('./student-users.js');
+const transcriptData = require('./smpl-zoom-data.js');
+const chatData = require('./smpl-zoom-data.js');
 // const teacherUser = require('./teacher-users.js');
 
 run();
@@ -11,29 +13,50 @@ async function run() {
   try {
     await client.connect();
 
-    const students = await Promise.all(
-      studentUser.map(student => {
+    const users = await Promise.all(
+      usersData.map(user => {
         return client.query(`
-                      INSERT INTO students (email, role, hash)
+                      INSERT INTO users (email, hash, meeting_fav)
                       VALUES ($1, $2, $3)
                       RETURNING *;
                   `,
-        [student.email, student.role, student.hash]);
+        [user.email, user.hash, user.meeting_fav]);
       })
     );
       
-    const student = students[0].rows[0];
+    const user = users[0].rows[0];
 
     await Promise.all(
       meetingData.map(meeting => {
         return client.query(`
-                    INSERT INTO meeting_data (name, cool_factor, owner_id)
-                    VALUES ($1, $2, $3);
+                    INSERT INTO meeting_data (uuid, host_id, topic, start_time, share_url, duration, video_play_url, audio_play_url, transcript_url, chat_file, meeting_views, meeting_fav, owner_id)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
                 `,
-        [meeting.name, meeting.cool_factor, student.id]);
+        [meeting.uuid, meeting.host_id, meeting.topic, meeting.start_time, meeting.share_url, meeting.duration, meeting.video_play_url, meeting.audio_play_url, meeting.transcript_url, meeting.chat_file, meeting.meeting_views, meeting.meeting_fav, user.id]);
       })
     );
     
+    await Promise.all(
+      transcriptData.map(transcript => {
+        return client.query(`
+                      INSERT INTO transcripts (uuid, time_start, time_end, speaker, text, keywords)
+                      VALUES ($1, $2, $3, $4, $5, $6)
+                      RETURNING *;
+                  `,
+        [transcript.uuid, transcript.time_start, transcript.time_end, transcript.speaker, transcript.text, transcript.keywords]);
+      })
+    );
+
+    await Promise.all(
+      chatData.map(chat => {
+        return client.query(`
+                      INSERT INTO chats (uuid, timestamp, speaker, text)
+                      VALUES ($1, $2, $3, $4)
+                      RETURNING *;
+                  `,
+        [chat.uuid, chat.timestamp, chat.speaker, chat.text]);
+      })
+    );
 
     console.log('seed data load complete');
   }
