@@ -1,6 +1,6 @@
 const client = require('../lib/client');
 // import our seed data:
-const zoomData = require('./smpl-zoom-data.js');
+const meetingData = require('./smpl-zoom-data.js');
 const studentUser = require('./student-users.js');
 // const teacherUser = require('./teacher-users.js');
 
@@ -25,12 +25,12 @@ async function run() {
     const student = students[0].rows[0];
 
     await Promise.all(
-      zoomData.map(zoom => {
+      meetingData.map(meeting => {
         return client.query(`
-                    INSERT INTO zoom_data (name, cool_factor, owner_id)
+                    INSERT INTO meeting_data (name, cool_factor, owner_id)
                     VALUES ($1, $2, $3);
                 `,
-        [zoom.name, zoom.cool_factor, student.id]);
+        [meeting.name, meeting.cool_factor, student.id]);
       })
     );
     
