@@ -30,7 +30,7 @@ async function run() {
     await Promise.all(
       meetingData.map(meeting => {
         return client.query(`
-                    INSERT INTO meetings (uuid, host_id, topic, start_time, share_url, duration, video_play_url, audio_play_url, transcript_url, chat_file, meeting_views, meeting_fav, user_id)
+                    INSERT INTO meetings (uuid, host_id, topic, start_time, share_url, duration, video_play_url, audio_play_url, transcript_url, chat_file, meeting_views, meeting_fav, owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
                 `,
         [meeting.uuid, meeting.host_id, meeting.topic, meeting.start_time, meeting.share_url, meeting.duration, meeting.video_play_url, meeting.audio_play_url, meeting.transcript_url, meeting.chat_file, meeting.meeting_views, meeting.meeting_fav, user.id]);
@@ -62,7 +62,7 @@ async function run() {
     await Promise.all(
       favData.map(meeting => {
         return client.query(`
-                    INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, user_id)
+                    INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
                 `,
         [meeting.uuid, meeting.host_id, meeting.topic, meeting.start_time, meeting.timestamp, meeting.speaker, meeting.text, user.id]);
