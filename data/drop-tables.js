@@ -1,5 +1,4 @@
 const client = require('../lib/client');
-const { getEmoji } = require('../lib/emoji.js');
 
 run();
 
@@ -10,10 +9,10 @@ async function run() {
     
     await client.query(`
             DROP TABLE IF EXISTS users CASCADE;
-            DROP TABLE IF EXISTS animals;
+            DROP TABLE IF EXISTS smpl-zoom-data;
         `);
 
-    console.log(' drop tables complete', getEmoji(), getEmoji(), getEmoji());
+    console.log(' drop tables complete');
   }
   catch(err) {
     console.log(err);

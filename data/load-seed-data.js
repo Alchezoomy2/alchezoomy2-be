@@ -1,8 +1,8 @@
 const client = require('../lib/client');
 // import our seed data:
-const animals = require('./animals.js');
-const usersData = require('./users.js');
-const { getEmoji } = require('../lib/emoji.js');
+const zoomData = require('./smpl-zoom-data.js');
+const studentUser = require('./student-users.js');
+// const teacherUser = require('./teacher-users.js');
 
 run();
 
@@ -11,31 +11,31 @@ async function run() {
   try {
     await client.connect();
 
-    const users = await Promise.all(
-      usersData.map(user => {
+    const students = await Promise.all(
+      studentUser.map(student => {
         return client.query(`
-                      INSERT INTO users (email, hash)
-                      VALUES ($1, $2)
+                      INSERT INTO students (email, role, hash)
+                      VALUES ($1, $2, $3)
                       RETURNING *;
                   `,
-        [user.email, user.hash]);
+        [student.email, student.role, student.hash]);
       })
     );
       
-    const user = users[0].rows[0];
+    const student = students[0].rows[0];
 
     await Promise.all(
-      animals.map(animal => {
+      zoomData.map(zoom => {
         return client.query(`
-                    INSERT INTO animals (name, cool_factor, owner_id)
+                    INSERT INTO zoom_data (name, cool_factor, owner_id)
                     VALUES ($1, $2, $3);
                 `,
-        [animal.name, animal.cool_factor, user.id]);
+        [zoom.name, zoom.cool_factor, student.id]);
       })
     );
     
 
-    console.log('seed data load complete', getEmoji(), getEmoji(), getEmoji());
+    console.log('seed data load complete');
   }
   catch(err) {
     console.log(err);
