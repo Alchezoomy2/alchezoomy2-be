@@ -33,9 +33,10 @@ async function run() {
             );
                 CREATE TABLE transcripts (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid INTEGER NOT NULL,
-                    time_start INTEGER NOT NULL,
-                    time_end INTEGER NOT NULL,
+                    uuid VARCHAR(512) NOT NULL,
+                    identifier VARCHAR(512) NOT NULL,
+                    time_start FLOAT NOT NULL,
+                    time_end FLOAT NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL,
                     keywords VARCHAR(512) NOT NULL

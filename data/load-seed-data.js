@@ -41,11 +41,11 @@ async function run() {
     await Promise.all(
       transcriptData.map(transcript => {
         return client.query(`
-                      INSERT INTO transcripts (uuid, time_start, time_end, speaker, text, keywords)
-                      VALUES ($1, $2, $3, $4, $5, $6)
+                      INSERT INTO transcripts (uuid, identifier, time_start, time_end, speaker, text, keywords)
+                      VALUES ($1, $2, $3, $4, $5, $6, $7)
                       RETURNING *;
                   `,
-          [transcript.uuid, transcript.time_start, transcript.time_end, transcript.speaker, transcript.text, transcript.keywords]);
+          [transcript.uuid, transcript.identifier, transcript.time_start, transcript.time_end, transcript.speaker, transcript.text, transcript.keywords]);
       })
     );
 
@@ -62,7 +62,6 @@ async function run() {
 
     await Promise.all(
       favData.map(favorite => {
-        console.log(favorite)
         return client.query(`
                     INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
