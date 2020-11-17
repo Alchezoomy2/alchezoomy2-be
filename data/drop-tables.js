@@ -9,7 +9,10 @@ async function run() {
     
     await client.query(`
             DROP TABLE IF EXISTS users CASCADE;
-            DROP TABLE IF EXISTS smpl-zoom-data;
+            DROP TABLE IF EXISTS meetings;
+            DROP TABLE IF EXISTS transcripts;
+            DROP TABLE IF EXISTS chats;
+            DROP TABLE IF EXISTS favorites;
         `);
 
     console.log(' drop tables complete');
