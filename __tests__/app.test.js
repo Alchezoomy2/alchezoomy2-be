@@ -7,91 +7,57 @@ const app = require("../lib/app");
 const client = require("../lib/client");
 const webvtt = require("node-webvtt");
 
-const newString = `WEBVTT
-
-1
-00:00:01.199 --> 00:00:01.620
-Alright.
-
-2
-00:00:02.790 --> 00:00:04.799
-Ryan Mehta: Yeah, great. This is all looking so awesome.
-
-3
-00:00:06.270 --> 00:00:11.519
-Ryan Mehta: Let's take a look at your theme jazz sex from your theme layer.
-
-4
-00:00:12.599 --> 00:00:14.910
-Ryan Mehta: Okay, well, we probably don't need to talk about this one.
-
-5
-00:00:15.389 --> 00:00:33.000
-Thomas Stussi: Yeah, this one is just like I wasn't sure about like where exactly the provider needs to go. I guess like I was trying to get that the provider as high up as possible, but it didn't feel quite right to put it in app or index.
-
-6
-00:00:34.770 --> 00:00:36.180
-Thomas Stussi: So I just made this layer.
-
-7
-00:00:37.080 --> 00:00:39.030
-Ryan Mehta: Yeah, this is a good decision.`;
-
 describe("app routes", () => {
   describe("routes", () => {
     let token;
 
-    beforeAll(async done => {
-      execSync('npm run setup-db');
+    beforeAll(async (done) => {
+      execSync("npm run setup-db");
 
       client.connect();
 
-      const signInData = await fakeRequest(app)
-        .post('/auth/signup')
-        .send({
-          email: 'jon@user.com',
-          password: '1234'
-        });
+      const signInData = await fakeRequest(app).post("/auth/signup").send({
+        email: "jon@user.com",
+        password: "1234",
+      });
 
       token = signInData.body.token; // eslint-disable-line
 
       return done();
     });
-    
-    afterAll(done => {
+
+    afterAll((done) => {
       return client.end(done);
     });
 
-    test('returns animals', async () => {
-
+    test("returns animals", async () => {
       const expectation = [
         {
-          'id': 1,
-          'name': 'bessie',
-          'coolfactor': 3,
-          'owner_id': 1
+          id: 1,
+          name: "bessie",
+          coolfactor: 3,
+          owner_id: 1,
         },
         {
-          'id': 2,
-          'name': 'jumpy',
-          'coolfactor': 4,
-          'owner_id': 1
+          id: 2,
+          name: "jumpy",
+          coolfactor: 4,
+          owner_id: 1,
         },
         {
-          'id': 3,
-          'name': 'spot',
-          'coolfactor': 10,
-          'owner_id': 1
-        }
+          id: 3,
+          name: "spot",
+          coolfactor: 10,
+          owner_id: 1,
+        },
       ];
 
       const data = await fakeRequest(app)
-        .get('/animals')
-        .expect('Content-Type', /json/)
+        .get("/animals")
+        .expect("Content-Type", /json/)
         .expect(200);
 
       expect(data.body).toEqual(expectation);
     });
-
   });
 });
