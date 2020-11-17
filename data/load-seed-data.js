@@ -62,7 +62,7 @@ async function run() {
 
     await Promise.all(
       favData.map(favorite => {
-        console.log(favorite.owner_id)
+        console.log(favorite)
         return client.query(`
                     INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, owner_id)
                     VALUES ($1, $2, $3, $4, $5, $6, $7, $8);

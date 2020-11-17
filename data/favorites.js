@@ -7,7 +7,7 @@ module.exports = [{
     timestamp: 1000,
     speaker: 'speaker1',
     text: 'text1',
-    owner_id: 2
+    owner_id: 1
 }, {
     uuid: 2,
     host_id: 'host_id2',
@@ -16,6 +16,6 @@ module.exports = [{
     timestamp: 2000,
     speaker: 'speaker2',
     text: 'text2',
-    owner_id: 2
+    owner_id: 1
 }];
 
