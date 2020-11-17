@@ -11,24 +11,22 @@ describe("app routes", () => {
   describe("routes", () => {
     let token;
 
-    beforeAll(async done => {
-      execSync('npm run setup-db');
+    beforeAll(async (done) => {
+      execSync("npm run setup-db");
 
       client.connect();
 
-      const signInData = await fakeRequest(app)
-        .post('/auth/signup')
-        .send({
-          email: 'jon@user.com',
-          password: '1234'
-        });
+      const signInData = await fakeRequest(app).post("/auth/signup").send({
+        email: "jon@user.com",
+        password: "1234",
+      });
 
       token = signInData.body.token; // eslint-disable-line
 
       return done();
     });
-    
-    afterAll(done => {
+
+    afterAll((done) => {
       return client.end(done);
     });
 
@@ -61,9 +59,5 @@ describe("app routes", () => {
 
       expect(data.body).toEqual(expectation);
     });
-<<<<<<< HEAD
-=======
-
->>>>>>> 947399cf4f56679bdf5da89149bbb898340dfb32
   });
 });
