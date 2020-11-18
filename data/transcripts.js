@@ -1,22 +1,35 @@
 module.exports = [
   {
     'identifier': 'identifier',
+    time_start: 10.0,
+    time_end: 50.0,
+    speaker: 'me',
     'text': 'text1'
   },
   {
     'identifier': 'identifier',
+    time_start: 10.0,
+    time_end: 50.0,
+    speaker: 'me',
     'text': 'text2'
   },
   {
     'identifier': 'identifier',
+    time_start: 10.0,
+    time_end: 50.0,
+    speaker: 'me',
     'text': 'text3'
   },
   {
     'identifier': '1',
+    time_start: 10.0,
+    time_end: 50.0,
+    speaker: 'me',
     'text': 'Ryan Mehta: Okay, so'
   },
   {
     'identifier': '2',
+
     'text': 'Ryan Mehta: Last time we made a full stack app. We did what I would call a data driven'
   },
   {
