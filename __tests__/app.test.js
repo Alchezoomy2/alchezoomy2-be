@@ -32,7 +32,7 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test('returns ALL zoom api meeting data', async() => {
+    test('returns ALL zoom api meeting data to seed frontend', async() => {
       const expectation = {
         ...seedMeetingData
       };
