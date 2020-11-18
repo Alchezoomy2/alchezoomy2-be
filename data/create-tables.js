@@ -16,7 +16,7 @@ async function run() {
                     hash VARCHAR(512) NOT NULL
                 );           
                 CREATE TABLE meetings (
-                   id SERIAL PRIMARY KEY NOT NULL,
+                    id SERIAL PRIMARY KEY NOT NULL,
                     uuid VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
@@ -50,14 +50,23 @@ async function run() {
                 CREATE TABLE favorites (
                     id SERIAL PRIMARY KEY NOT NULL,
                     uuid VARCHAR(512) NOT NULL,
-                    host_id VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
-                    timestamp VARCHAR(512) NOT NULL,
-                    speaker VARCHAR(512) NOT NULL,
-                    text VARCHAR(512) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
           );
+                CREATE TABLE bookmarks (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  uuid VARCHAR(512) NOT NULL,
+                  host_id VARCHAR(512) NOT NULL,
+                  topic VARCHAR(512) NOT NULL,
+                  start_time VARCHAR(512) NOT NULL,
+                  identifier VARCHAR(512) NOT NULL,
+                  time_start FLOAT NOT NULL,
+                  speaker VARCHAR(512) NOT NULL,
+                  text VARCHAR(512) NOT NULL,
+                  comments VARCHAR(512),
+                  owner_id INTEGER NOT NULL REFERENCES users(id)
+        );
         `);
 
     console.log('create tables complete');

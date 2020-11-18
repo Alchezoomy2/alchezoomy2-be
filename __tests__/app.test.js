@@ -119,23 +119,6 @@ describe('app routes', () => {
 
       expect(returnedObject.body).toEqual(expectation);
     });
-    
-    // test('GET an array of user specific favorites', async() => {
-
-    //   const expectation = [
-    //     {
-    //       ...favoritesData
-    //     }];
-  
-    //   const returnedObject = await fakeRequest(app)
-    //     .post('/api/favorites')
-    //     .send(...favoritesData)
-    //     .set('Authorization', token)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
-
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
 
     // test('POSTS an array of user specific favorites', async() => {
 
@@ -164,6 +147,23 @@ describe('app routes', () => {
     //         text: 'text1',
     //         owner_id: 1
     //       }])
+    //     .set('Authorization', token)
+    //     .expect('Content-Type', /json/)
+    //     .expect(200);
+
+    //   expect(returnedObject.body).toEqual(expectation);
+    // });
+
+   // test('GET an array of user specific favorites', async() => {
+
+    //   const expectation = [
+    //     {
+    //       ...favoritesData
+    //     }];
+  
+    //   const returnedObject = await fakeRequest(app)
+    //     .post('/api/favorites')
+    //     .send(...favoritesData)
     //     .set('Authorization', token)
     //     .expect('Content-Type', /json/)
     //     .expect(200);
