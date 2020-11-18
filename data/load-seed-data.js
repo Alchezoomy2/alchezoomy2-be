@@ -3,7 +3,7 @@ const client = require('../lib/client');
 const usersData = require('./users.js');
 // const meetingData = require('./meetings.js');
 // const transcriptData = require('./transcripts.js');
-const chatData = require('./chat.js');
+// const chatData = require('./chats.js');
 const favData = require('./favorites.js');
 
 // const teacherUser = require('./teacher-users.js');
@@ -75,18 +75,18 @@ async function run() {
     //   })
     // );
 
-    await Promise.all(
-      chatData.map((chat) => {
-        return client.query(
-          `
-                      INSERT INTO chats (uuid, timestamp, speaker, text)
-                      VALUES ($1, $2, $3, $4)
-                      RETURNING *;
-                  `,
-          [chat.uuid, chat.timestamp, chat.speaker, chat.text]
-        );
-      })
-    );
+    // await Promise.all(
+    //   chatData.map((chat) => {
+    //     return client.query(
+    //       `
+    //                   INSERT INTO chats (uuid, timestamp, speaker, text)
+    //                   VALUES ($1, $2, $3, $4)
+    //                   RETURNING *;
+    //               `,
+    //       [chat.uuid, chat.timestamp, chat.speaker, chat.text]
+    //     );
+    //   })
+    // );
 
     await Promise.all(
       favData.map((favorite) => {

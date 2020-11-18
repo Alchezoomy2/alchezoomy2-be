@@ -9,6 +9,7 @@ const client = require('../lib/client');
 const seedMeetingData = require('../data/seed-meetings');
 const meetingsData = require('../data/meetings');
 const transcriptData = require('../data/transcripts');
+const chatData = require('../data/chats');
 // const favoritesData = require('../data/favorites');
 
 describe('app routes', () => {
@@ -104,7 +105,21 @@ describe('app routes', () => {
       expect(returnedObject.body).toEqual(expectation);
     });
 
+    test('GET an array of chat data for a specfic meeting based on the uuid', async() => {
 
+      const expectation = [
+        ...chatData
+      ];
+
+      const returnedObject = await fakeRequest(app)
+        .get('/api/chats/Won0eAuoTPKxsybU0rGkag==')
+        .set('Authorization', token)
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(returnedObject.body).toEqual(expectation);
+    });
+    
     // test('GET an array of user specific favorites', async() => {
 
     //   const expectation = [
