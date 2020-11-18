@@ -1,8 +1,8 @@
 const client = require('../lib/client');
 // import our seed data:
 const usersData = require('./users.js');
-const meetingData = require('./meetings.js');
-const transcriptData = require('./transcripts.js');
+// const meetingData = require('./meetings.js');
+// const transcriptData = require('./transcripts.js');
 const chatData = require('./chat.js');
 const favData = require('./favorites.js');
 
@@ -29,30 +29,30 @@ async function run() {
 
     const user = users[0].rows[0];
 
-    await Promise.all(
-      meetingData.map((meeting) => {
-        return client.query(
-          `
-                    INSERT INTO meetings (uuid, host_id, topic, start_time, share_url, duration, video_play_url, audio_play_url, transcript_url, chat_file, meeting_views, meeting_fav)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);
-                `,
-          [
-            meeting.uuid,
-            meeting.host_id,
-            meeting.topic,
-            meeting.start_time,
-            meeting.share_url,
-            meeting.duration,
-            meeting.video_play_url,
-            meeting.audio_play_url,
-            meeting.transcript_url,
-            meeting.chat_file,
-            meeting.meeting_views,
-            meeting.meeting_fav,
-          ]
-        );
-      })
-    );
+    // await Promise.all(
+    //   meetingData.map((meeting) => {
+    //     return client.query(
+    //       `
+    //                 INSERT INTO meetings (uuid, host_id, topic, start_time, share_url, duration, video_play_url, audio_play_url, transcript_url, chat_file, meeting_views, meeting_fav)
+    //                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);
+    //             `,
+    //       [
+    //         meeting.uuid,
+    //         meeting.host_id,
+    //         meeting.topic,
+    //         meeting.start_time,
+    //         meeting.share_url,
+    //         meeting.duration,
+    //         meeting.video_play_url,
+    //         meeting.audio_play_url,
+    //         meeting.transcript_url,
+    //         meeting.chat_file,
+    //         meeting.meeting_views,
+    //         meeting.meeting_fav,
+    //       ]
+    //     );
+    //   })
+    // );
 
     // await Promise.all(
     //   transcriptData.map((transcript) => {
@@ -110,7 +110,7 @@ async function run() {
     );
 
     console.log('seed data load complete');
-  } catch (err) {
+  } catch(err) {
     console.log(err);
   } finally {
     client.end();
