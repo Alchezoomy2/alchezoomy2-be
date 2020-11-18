@@ -9,7 +9,7 @@ const client = require('../lib/client');
 const seedMeetingData = require('../data/seed-meetings');
 const meetingsData = require('../data/meetings');
 const transcriptData = require('../data/transcripts');
-const favoritesData = require('../data/favorites');
+// const favoritesData = require('../data/favorites');
 
 describe('app routes', () => {
   describe('routes', () => {
@@ -89,35 +89,21 @@ describe('app routes', () => {
       expect(returnedObject.body).toEqual(expectation);
     });
 
-    // Is this still a real GET? 
-    // test('GET a transcripts array for ALL meetings', async() => {
+    test('GET an array of transcripts data for a specfic meeting based on the uuid', async() => {
 
-    //   const expectation = [
-    //   //What data array are we actually pulling from?
-    //     ...transcriptData
-    //   ];
+      const expectation = [
+        ...transcriptData
+      ];
 
-    //   const returnedObject = await fakeRequest(app)
-    //     .get('/api/transcripts')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const returnedObject = await fakeRequest(app)
+        .get('/api/transcripts/Won0eAuoTPKxsybU0rGkag==')
+        .set('Authorization', token)
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
+      expect(returnedObject.body).toEqual(expectation);
+    });
 
-    // test('GET a transcripts array for a uuid specfic meeting', async() => {
-
-    //   const expectation = [
-    //     ...transcriptData
-    //   ];
-
-    //   const returnedObject = await fakeRequest(app)
-    //     .get('/api/transcripts/:id')
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
-
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
 
     // test('GET an array of user specific favorites', async() => {
 
