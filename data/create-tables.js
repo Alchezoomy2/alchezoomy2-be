@@ -52,8 +52,8 @@ async function run() {
                     uuid VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
-                    start_time INTEGER NOT NULL,
-                    timestamp INTEGER NOT NULL,
+                    start_time VARCHAR(512) NOT NULL,
+                    timestamp VARCHAR(512) NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
