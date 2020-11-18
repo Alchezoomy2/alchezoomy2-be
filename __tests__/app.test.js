@@ -33,7 +33,7 @@ describe('app routes', () => {
       return client.end(done);
     });
 
-    test('returns ALL zoom api meeting data to seed frontend', async() => {
+    test('returns ALL zoom api meeting data and seeds frontend', async() => {
       const expectation = {
         ...seedMeetingData
       };
@@ -86,14 +86,30 @@ describe('app routes', () => {
     expect(returnedObject.body).toEqual(expectation);
   });
 
-  test('returns a transcripts array for uuid specfic meeting', async() => {
+  // Is this still a real GET? 
+  test('returns a transcripts array for ALL meetings', async() => {
+
+    const expectation = [
+      //What data array are we actually pulling from?
+      ...transcriptData
+    ];
+
+    const returnedObject = await fakeRequest(app)
+      .get('/api/transcripts')
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(returnedObject.body).toEqual(expectation);
+  });
+
+  test('returns a transcripts array for a uuid specfic meeting', async() => {
 
     const expectation = [
       ...transcriptData
     ];
 
     const returnedObject = await fakeRequest(app)
-      .get('/api/transcripts')
+      .get('/api/transcripts/:id')
       .expect('Content-Type', /json/)
       .expect(200);
 
