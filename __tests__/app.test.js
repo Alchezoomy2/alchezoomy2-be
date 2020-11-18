@@ -6,7 +6,8 @@ const fakeRequest = require('supertest');
 const app = require('../lib/app');
 const client = require('../lib/client');
 // const webvtt = require('node-webvtt');
-const seedMeetingData =require('../data/seed-meetings');
+const seedMeetingData = require('../data/seed-meetings');
+const meetingsData = require('../data/meetings');
 const transcriptData = require('../data/transcripts');
 
 describe('app routes', () => {
@@ -46,6 +47,34 @@ describe('app routes', () => {
     });
   });
 
+  test('returns an array of ALL zoom meetings', async() => {
+
+    const expectation = [
+      ...meetingsData
+    ];
+
+    const returnedObject = await fakeRequest(app)
+      .get('/api/transcripts')
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(returnedObject.body).toEqual(expectation);
+  });
+
+  test('returns an array of data for a specfic meeting based on the uuid', async() => {
+
+    const expectation = [
+      ...meetingsData
+    ];
+
+    const returnedObject = await fakeRequest(app)
+      .get('/api//meetings/:id')
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(returnedObject.body).toEqual(expectation);
+  });
+
   test('returns a transcripts array for uuid specfic meeting', async() => {
 
     const expectation = [
@@ -53,7 +82,7 @@ describe('app routes', () => {
     ];
 
     const returnedObject = await fakeRequest(app)
-      .get('/transcripts')
+      .get('/api/transcripts')
       .expect('Content-Type', /json/)
       .expect(200);
 
