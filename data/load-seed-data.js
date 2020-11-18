@@ -54,26 +54,26 @@ async function run() {
       })
     );
 
-    await Promise.all(
-      transcriptData.map((transcript) => {
-        return client.query(
-          `
-                      INSERT INTO transcripts (uuid, identifier, time_start, time_end, speaker, text, keywords)
-                      VALUES ($1, $2, $3, $4, $5, $6, $7)
-                      RETURNING *;
-                  `,
-          [
-            transcript.uuid,
-            transcript.identifier,
-            transcript.time_start,
-            transcript.time_end,
-            transcript.speaker,
-            transcript.text,
-            transcript.keywords,
-          ]
-        );
-      })
-    );
+    // await Promise.all(
+    //   transcriptData.map((transcript) => {
+    //     return client.query(
+    //       `
+    //                   INSERT INTO transcripts (uuid, identifier, time_start, time_end, speaker, text, keywords)
+    //                   VALUES ($1, $2, $3, $4, $5, $6, $7)
+    //                   RETURNING *;
+    //               `,
+    //       [
+    //         transcript.uuid,
+    //         transcript.identifier,
+    //         transcript.time_start,
+    //         transcript.time_end,
+    //         transcript.speaker,
+    //         transcript.text,
+    //         transcript.keywords,
+    //       ]
+    //     );
+    //   })
+    // );
 
     await Promise.all(
       chatData.map((chat) => {
@@ -110,7 +110,7 @@ async function run() {
     );
 
     console.log('seed data load complete');
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   } finally {
     client.end();
