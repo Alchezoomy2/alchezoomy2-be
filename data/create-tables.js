@@ -1,4 +1,4 @@
-const client = require("../lib/client");
+const client = require('../lib/client');
 
 // async/await needs to run in a function
 run();
@@ -60,8 +60,8 @@ async function run() {
           );
         `);
 
-    console.log("create tables complete");
-  } catch (err) {
+    console.log('create tables complete');
+  } catch(err) {
     // problem? let's see the error...
     console.log(err);
   } finally {
