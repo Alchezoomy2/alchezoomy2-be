@@ -1,33 +1,33 @@
 const client = require('../lib/client');
 // import our seed data:
-const usersData = require('./users.js');
+// const usersData = require('./users.js');
 // const meetingData = require('./meetings.js');
 // const transcriptData = require('./transcripts.js');
 // const chatData = require('./chats.js');
-const favData = require('./favorites.js');
+// const favData = require('./favorites.js');
 
 // const teacherUser = require('./teacher-users.js');
 
-run();
+// run();
 
-async function run() {
-  try {
-    await client.connect();
+// async function run() {
+//   try {
+//     await client.connect();
 
-    const users = await Promise.all(
-      usersData.map((user) => {
-        return client.query(
-          `
-                      INSERT INTO users (email, hash)
-                      VALUES ($1, $2)
-                      RETURNING *;
-                  `,
-          [user.email, user.hash]
-        );
-      })
-    );
+//     const users = await Promise.all(
+//       usersData.map((user) => {
+//         return client.query(
+//           `
+//                       INSERT INTO users (email, hash)
+//                       VALUES ($1, $2)
+//                       RETURNING *;
+//                   `,
+//           [user.email, user.hash]
+//         );
+//       })
+//     );
 
-    const user = users[0].rows[0];
+    // const user = users[0].rows[0];
 
     // await Promise.all(
     //   meetingData.map((meeting) => {
@@ -88,31 +88,31 @@ async function run() {
     //   })
     // );
 
-    await Promise.all(
-      favData.map((favorite) => {
-        return client.query(
-          `
-                    INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, owner_id)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
-                `,
-          [
-            favorite.uuid,
-            favorite.host_id,
-            favorite.topic,
-            favorite.start_time,
-            favorite.timestamp,
-            favorite.speaker,
-            favorite.text,
-            favorite.owner_id,
-          ]
-        );
-      })
-    );
+    // await Promise.all(
+    //   favData.map((favorite) => {
+    //     return client.query(
+    //       `
+    //                 INSERT INTO favorites (uuid, host_id, topic, start_time, timestamp, speaker, text, owner_id)
+    //                 VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+    //             `,
+    //       [
+    //         favorite.uuid,
+    //         favorite.host_id,
+    //         favorite.topic,
+    //         favorite.start_time,
+    //         favorite.timestamp,
+    //         favorite.speaker,
+    //         favorite.text,
+    //         favorite.owner_id,
+    //       ]
+    //     );
+    //   })
+    // );
 
-    console.log('seed data load complete');
-  } catch(err) {
-    console.log(err);
-  } finally {
-    client.end();
-  }
-}
+//     console.log('seed data load complete');
+//   } catch(err) {
+//     console.log(err);
+//   } finally {
+//     client.end();
+//   }
+// }

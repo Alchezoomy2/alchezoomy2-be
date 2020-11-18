@@ -120,84 +120,75 @@ describe('app routes', () => {
       expect(returnedObject.body).toEqual(expectation);
     });
 
-    // test('POSTS an array of user specific favorites', async() => {
+    test('POSTS an array of user specific favorites', async() => {
 
-    //   const expectation = [
-    //     {
-    //       uuid: 3,
-    //       host_id: 'host_id1',
-    //       topic: 'topic1',
-    //       start_time: 3,
-    //       timestamp: 1000,
-    //       speaker: 'speaker1',
-    //       text: 'text1',
-    //       owner_id: 1
-    //     }];
+      const expectation = [
+        {
+          'id': 1,
+          'uuid': 'Won0eAuoTPKxsybU0rGkag==',
+          'topic': 'september-2020--Class 38: Full-Stack Auth #full-stack #react #sql #express',
+          'start_time': '2020-11-09T17:56:05Z',
+          'owner_id': 1
+        }
+      ];
   
-    //   const returnedObject = await fakeRequest(app)
-    //     .post('/api/favorites')
-    //     .send([
-    //       {
-    //         uuid: 3,
-    //         host_id: 'host_id1',
-    //         topic: 'topic1',
-    //         start_time: 3,
-    //         timestamp: 1000,
-    //         speaker: 'speaker1',
-    //         text: 'text1',
-    //         owner_id: 1
-    //       }])
-    //     .set('Authorization', token)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const returnedObject = await fakeRequest(app)
+        .post('/api/favorites')
+        .send(
+          {
+            'id': 1,
+            'uuid': 'Won0eAuoTPKxsybU0rGkag==',
+            'topic': 'september-2020--Class 38: Full-Stack Auth #full-stack #react #sql #express',
+            'start_time': '2020-11-09T17:56:05Z',
+            'owner_id': 1
+          })
+        .set('Authorization', token)
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
+      expect(returnedObject.body).toEqual(expectation);
+    });
 
-   // test('GET an array of user specific favorites', async() => {
+    test('GET an array of user specific favorites', async() => {
 
-    //   const expectation = [
-    //     {
-    //       ...favoritesData
-    //     }];
+      const expectation = [
+        {
+          'uuid': 'Won0eAuoTPKxsybU0rGkag==',
+          'topic': 'september-2020--Class 38: Full-Stack Auth #full-stack #react #sql #express',
+          'start_time': '2020-11-09T17:56:05Z',
+          'owner_id': 1
+        }];
   
-    //   const returnedObject = await fakeRequest(app)
-    //     .post('/api/favorites')
-    //     .send(...favoritesData)
-    //     .set('Authorization', token)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const returnedObject = await fakeRequest(app)
+        .get('/api/favorites')
+        .set('Authorization', token)
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
+      expect(returnedObject.body).toEqual(expectation);
+    });
 
-    // test('DELETES an array of user specific favorites /:id', async() => {
+    test('DELETES an array of user specific favorites /:id', async() => {
 
-    //   const expectation = [
-    //     {
-    //       uuid: 2,
-    //       host_id: 'host_id1',
-    //       topic: 'topic1',
-    //       start_time: 2,
-    //       timestamp: 1000,
-    //       speaker: 'speaker1',
-    //       text: 'text1',
-    //       owner_id: 1
-    //     }
-    //   ];
+      const expectation = [
+        {
+          'id': 1,
+          'uuid': 'Won0eAuoTPKxsybU0rGkag==',
+          'topic': 'september-2020--Class 38: Full-Stack Auth #full-stack #react #sql #express',
+          'start_time': '2020-11-09T17:56:05Z',
+          'owner_id': 1
+        }
+      ];
 
-    //   const returnedObject = await fakeRequest(app)
-    //     .delete('/api/favorites/2')
-    //     .set('Authorization', token)
-    //     .expect('Content-Type', /json/)
-    //     .expect(200);
+      const returnedObject = await fakeRequest(app)
+        .delete('/api/favorites/Won0eAuoTPKxsybU0rGkag==')
+        .set('Authorization', token)
+        .expect('Content-Type', /json/)
+        .expect(200);
 
-    //   expect(returnedObject.body).toEqual(expectation);
-    // });
+      expect(returnedObject.body).toEqual(expectation);
+    });
 
-    // add test for /api/chat
-    // add test for /api/chat/:id
-    // add test for /new_meetings
 
 
   });
