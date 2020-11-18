@@ -1,10 +1,10 @@
-const client = require("../lib/client");
+const client = require('../lib/client');
 // import our seed data:
-const usersData = require("./users.js");
-const meetingData = require("./meetings.js");
-const transcriptData = require("./transcripts.js");
-const chatData = require("./chat.js");
-const favData = require("./favorites.js");
+const usersData = require('./users.js');
+const meetingData = require('./meetings.js');
+const transcriptData = require('./transcripts.js');
+const chatData = require('./chat.js');
+const favData = require('./favorites.js');
 
 // const teacherUser = require('./teacher-users.js');
 
@@ -109,8 +109,8 @@ async function run() {
       })
     );
 
-    console.log("seed data load complete");
-  } catch (err) {
+    console.log('seed data load complete');
+  } catch(err) {
     console.log(err);
   } finally {
     client.end();
