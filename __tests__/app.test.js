@@ -168,7 +168,7 @@ describe('app routes', () => {
     expect(returnedObject.body).toEqual(expectation);
   });
 
-  test('DELETES an array of user specific favorites', async() => {
+  test('DELETES an array of user specific favorites /:id', async() => {
 
     const expectation = [
       {
@@ -191,6 +191,9 @@ describe('app routes', () => {
 
     expect(returnedObject.body).toEqual(expectation);
   });
+
+  // add test for /api/chat
+  // add test for /api/chat/:id
 
 
 });
