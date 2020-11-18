@@ -1,10 +1,10 @@
-const client = require("../lib/client");
+const client = require('../lib/client');
 // import our seed data:
-const usersData = require("./users.js");
-const meetingData = require("./meetings.js");
-const transcriptData = require("./transcripts.js");
-const chatData = require("./chat.js");
-const favData = require("./favorites.js");
+const usersData = require('./users.js');
+const meetingData = require('./meetings.js');
+const transcriptData = require('./transcripts.js');
+const chatData = require('./chat.js');
+const favData = require('./favorites.js');
 
 // const teacherUser = require('./teacher-users.js');
 
@@ -54,26 +54,26 @@ async function run() {
       })
     );
 
-    await Promise.all(
-      transcriptData.map((transcript) => {
-        return client.query(
-          `
-                      INSERT INTO transcripts (uuid, identifier, time_start, time_end, speaker, text, keywords)
-                      VALUES ($1, $2, $3, $4, $5, $6, $7)
-                      RETURNING *;
-                  `,
-          [
-            transcript.uuid,
-            transcript.identifier,
-            transcript.time_start,
-            transcript.time_end,
-            transcript.speaker,
-            transcript.text,
-            transcript.keywords,
-          ]
-        );
-      })
-    );
+    // await Promise.all(
+    //   transcriptData.map((transcript) => {
+    //     return client.query(
+    //       `
+    //                   INSERT INTO transcripts (uuid, identifier, time_start, time_end, speaker, text, keywords)
+    //                   VALUES ($1, $2, $3, $4, $5, $6, $7)
+    //                   RETURNING *;
+    //               `,
+    //       [
+    //         transcript.uuid,
+    //         transcript.identifier,
+    //         transcript.time_start,
+    //         transcript.time_end,
+    //         transcript.speaker,
+    //         transcript.text,
+    //         transcript.keywords,
+    //       ]
+    //     );
+    //   })
+    // );
 
     await Promise.all(
       chatData.map((chat) => {
@@ -109,7 +109,7 @@ async function run() {
       })
     );
 
-    console.log("seed data load complete");
+    console.log('seed data load complete');
   } catch (err) {
     console.log(err);
   } finally {

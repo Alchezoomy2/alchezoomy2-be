@@ -1,4 +1,4 @@
-const client = require("../lib/client");
+const client = require('../lib/client');
 
 // async/await needs to run in a function
 run();
@@ -42,14 +42,14 @@ async function run() {
           );
                 CREATE TABLE chats (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid INTEGER NOT NULL,
+                    uuid VARCHAR(512) NOT NULL,
                     timestamp VARCHAR(512) NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL
           );
                 CREATE TABLE favorites (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid INTEGER NOT NULL,
+                    uuid VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
                     start_time INTEGER NOT NULL,
@@ -60,7 +60,7 @@ async function run() {
           );
         `);
 
-    console.log("create tables complete");
+    console.log('create tables complete');
   } catch (err) {
     // problem? let's see the error...
     console.log(err);
