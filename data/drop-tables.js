@@ -12,7 +12,8 @@ async function run() {
             DROP TABLE IF EXISTS meetings CASCADE;
             DROP TABLE IF EXISTS transcripts CASCADE;
             DROP TABLE IF EXISTS chats CASCADE;
-            DROP TABLE IF EXISTS favorites;
+            DROP TABLE IF EXISTS favorites CASCADE;
+            DROP TABLE IF EXISTS bookmarks;
         `);
 
     console.log(' drop tables complete');
