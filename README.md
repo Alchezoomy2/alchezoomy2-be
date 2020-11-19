@@ -1,36 +1,61 @@
 # _AlcheZOOMy_
 
-#### AlcheZOOMy is an appliction that allows user to search and favorite videos, transcripts and chats from various published zoom meetings, 11-20-2020
+#### **AlcheZOOMy** is an appliction that allows user to search and favorite videos, transcripts and chats from various published zoom meetings. Designed and built over a five-day sprint as a part of the Alchemy Code Lab's curriculum, 11-20-2020
 
-#### By _**Dee Watson, Evan Finkelstein, Jillian Gibson, Paul Stevens, Sjaan Hydrick**_
+#### **The AlcheZOOMies**:
+- Dee Watson
+- Evan Finkelstein
+- Jillian Gibson
+- Paul Stevens
+- Sjaan Hydrick
 
+#
 ## Description
 
-_An AlcheZOOMy user can search through published videos, transcripts, and chat logs to find user-specific information. Meetings can be filtered by category and specific timestamps, speakers or keywords can be favorited for future reference._
+_Once registered and logged in, an AlcheZOOMy user can search through published videos, transcripts, and chat logs to find keyword or timestamp specific information. Meeting video's can be filtered by category, specific timestamps, speakers or keywords can be favorited for future reference._
+
+_This repository contains the backend data only. The deployed Node server is available on [Heroku](https://alchezoomy.herokuapp.com/). The frontend code can be found on in a separate [repository](https://github.com/Alchezoomy/zoom-search-app) and viewed live on [Netlify](https://alchezoomy.netlify.app/)._
+
+### Meta
+
+- [Miro Board](https://miro.com/app/board/o9J_kgdqUNg=/)
+- Backend test screenshots can be viewd via the _tests_ folder or in the back end [repo](https://github.com/Alchezoomy/zoom-search-sql/blob/main/__tests__/8%20passing%20jest%20tests.png).
 
 ## Setup/Installation Requirements
 
-<!-- * _Clone down repository from Git Hub to machine._
-* _Navigate to root directory._
-* _Open index.html in text editor to view code._
-* _Launch index.html to in browser to display or view via [netifly](https://alchezoomy.netlify.app/)._ -->
+To download and install dependencies:
 
-### The AlcheZOOMies
+```bash
+git clone https://github.com/Alchezoomy/zoom-search-sql
+cd zoom-search-sql
+npm i express, cors, superagent, morgan
+```
 
-_Questions or comments can be directed to [Dee Watson](dlarkinwatson@gmail.com), [Evan Finkelstein](evanfinkelstein91@gmail.com), [Jillian Gibson](jillian.l.gibson@gmail.com), [Paul Stevens](paul.stevens.developer@gmail.com), [Sjaan Hydrick](sjaanahydrick@gmail.com)._
+To view the app locally, use `npm run start`. Other scripts can be found in `package.json`.
+
+
+#### Questions or comments can be directed to:
+_[Dee Watson](dlarkinwatson@gmail.com), [Evan Finkelstein](evanfinkelstein91@gmail.com), [Jillian Gibson](jillian.l.gibson@gmail.com), [Paul Stevens](paul.stevens.developer@gmail.com), [Sjaan Hydrick](sjaanahydrick@gmail.com)._
 
 ## Libraries/Frameworks/Packages Used
 
-<!-- * _React_
+#### Frontend
+* _React_
+* _JSON_
+* _Heroku_
+* _react-player_
+* _fuse.js_
+#### Backend
 * _PostgreSQL_
-* _CSS_
-* _JSON_ -->
+* _NodeJS_
+* _node-fetch_
+* _node-webvtt_
+
 
 ### License
 
 *_This software operates under the [MIT](https://en.wikipedia.org/wiki/MIT_License) license._*
 
-Copyright (c) 2020 **_Dee Watson, Evan Finkelstein, Jillian Gibson, Paul Stevens, Sjaan Hydrick_**
+Copyright (c) 2020 _Dee Watson, Evan Finkelstein, Jillian Gibson, Paul Stevens, Sjaan Hydrick_
 
-###### Version
-1.0.0
+###### Version 1.0.0
