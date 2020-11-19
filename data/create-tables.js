@@ -19,6 +19,9 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     uuid VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
+                    host_name VARCHAR(512),
+                    pic_url VARCHAR(512),
+                    color VARCHAR(512),
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
                     share_url VARCHAR(512) NOT NULL,
@@ -36,9 +39,7 @@ async function run() {
                     identifier VARCHAR(512) NOT NULL,
                     time_start FLOAT NOT NULL,
                     time_end FLOAT NOT NULL,
-                    speaker VARCHAR(512) NOT NULL,
-                    text VARCHAR(512) NOT NULL,
-                    keywords VARCHAR(512) NOT NULL
+                    text VARCHAR NOT NULL
           );
                 CREATE TABLE chats (
                     id SERIAL PRIMARY KEY NOT NULL,
@@ -70,7 +71,7 @@ async function run() {
         `);
 
     console.log('create tables complete');
-  } catch(err) {
+  } catch (err) {
     // problem? let's see the error...
     console.log(err);
   } finally {
