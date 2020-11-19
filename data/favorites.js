@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> fb3e23e2661f3907e4bd94a17806637e7345eabe
 module.exports = [
   {
     'id': 2,
