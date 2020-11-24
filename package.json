@@ -8,7 +8,7 @@
     "test:watch": "npm run test -- --watch",
     "start": "node server.js",
     "start:watch": "nodemon server.js",
-    // "lint": "eslint .",
+    "lint": "eslint .",
     "create-tables": "node data/create-tables.js",
     "drop-tables": "node data/drop-tables.js",
     "load-seed-data": "node data/load-seed-data.js",
