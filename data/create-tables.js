@@ -28,19 +28,20 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     teacher_id VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
-                    host_name VARCHAR(512),
+                    account_id VARCHAR(512) NOT NULL,
+                    user_name VARCHAR(512),
                     pic_url VARCHAR(512),
                     color VARCHAR(512),
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
+                    duration INTEGER NOT NULL,
                     share_url VARCHAR(512) NOT NULL,
-                    video_play_url VARCHAR(512),
-                    audio_play_url VARCHAR(512),
+                    video_url VARCHAR(512),
+                    audio_url VARCHAR(512),
                     transcript_url VARCHAR(512),
                     chat_url VARCHAR(512) NOT NULL,
                     meeting_views INTEGER NOT NULL,
-                    meeting_fav INTEGER NOT NULL,
-                    duration INTEGER NOT NULL
+                    meeting_fav INTEGER NOT NULL
             );
                 CREATE TABLE transcripts (
                     id SERIAL PRIMARY KEY NOT NULL,
