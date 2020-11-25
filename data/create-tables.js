@@ -26,7 +26,7 @@ async function run() {
           );
                 CREATE TABLE meetings (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    teacher_id VARCHAR(512) NOT NULL,
+                    teacher_id INTERGER NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
                     account_id VARCHAR(512) NOT NULL,
                     user_name VARCHAR(512),
