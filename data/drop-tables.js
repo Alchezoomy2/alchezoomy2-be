@@ -13,12 +13,13 @@ async function run() {
             DROP TABLE IF EXISTS transcripts CASCADE;
             DROP TABLE IF EXISTS chats CASCADE;
             DROP TABLE IF EXISTS favorites CASCADE;
+            DROP TABLE IF EXISTS teachers CASCADE;
             DROP TABLE IF EXISTS bookmarks;
         `);
 
     console.log(' drop tables complete');
   }
-  catch(err) {
+  catch (err) {
     console.log(err);
   }
   finally {

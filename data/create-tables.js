@@ -15,9 +15,18 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );           
+                CREATE TABLE teachers (
+                  id SERIAL PRIMARY KEY NOT NULL,
+                  host_id VARCHAR(512) NOT NULL,
+                  user_name VARCHAR(512) NOT NULL,
+                  email VARCHAR(512),
+                  pic_url VARCHAR(512),
+                  color VARCHAR(512),
+                  account_id VARCHAR(512) NOT NULL,
+          );
                 CREATE TABLE meetings (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
+                    teacher_id VARCHAR(512) NOT NULL,
                     host_id VARCHAR(512) NOT NULL,
                     host_name VARCHAR(512),
                     pic_url VARCHAR(512),
@@ -28,7 +37,7 @@ async function run() {
                     video_play_url VARCHAR(512) NOT NULL,
                     audio_play_url VARCHAR(512) NOT NULL,
                     transcript_url VARCHAR(512) NOT NULL,
-                    chat_file VARCHAR(512) NOT NULL,
+                    chat_url VARCHAR(512) NOT NULL,
                     meeting_views INTEGER NOT NULL,
                     meeting_fav INTEGER NOT NULL,
                     duration INTEGER NOT NULL
