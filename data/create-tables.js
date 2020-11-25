@@ -35,11 +35,11 @@ async function run() {
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
                     duration INTEGER NOT NULL,
-                    share_url VARCHAR(512) NOT NULL,
-                    video_url VARCHAR(512),
-                    audio_url VARCHAR(512),
-                    transcript_url VARCHAR(512),
-                    chat_url VARCHAR(512),
+                    share_url VARCHAR NOT NULL,
+                    video_url VARCHAR,
+                    audio_url VARCHAR,
+                    transcript_url VARCHAR,
+                    chat_url VARCHAR,
                     meeting_views INTEGER NOT NULL,
                     meeting_favs INTEGER NOT NULL
             );
