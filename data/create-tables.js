@@ -41,7 +41,7 @@ async function run() {
                     transcript_url VARCHAR(512),
                     chat_url VARCHAR(512),
                     meeting_views INTEGER NOT NULL,
-                    meeting_fav INTEGER NOT NULL
+                    meeting_favs INTEGER NOT NULL
             );
                 CREATE TABLE transcripts (
                     id SERIAL PRIMARY KEY NOT NULL,
