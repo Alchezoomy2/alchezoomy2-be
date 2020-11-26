@@ -53,7 +53,8 @@ async function run() {
           );
                 CREATE TABLE chats (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
+                    meeting_id INTEGER NOT NULL,
+                    teacher_id INTEGER NOT NULL,
                     timestamp VARCHAR(512) NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL

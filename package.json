@@ -40,6 +40,8 @@
     "node-fetch": "^2.6.1",
     "node-webvtt": "^1.9.3",
     "pg": "^8.5.1",
+    "pg-format": "^1.0.4",
+    "pg-promise": "^10.8.0",
     "stopword": "^1.0.3",
     "superagent": "^6.1.0"
   },
