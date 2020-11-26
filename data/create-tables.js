@@ -45,7 +45,8 @@ async function run() {
             );
                 CREATE TABLE transcripts (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
+                    meeting_id INTEGER NOT NULL,
+                    teacher_id INTEGER NOT NULL,
                     identifier VARCHAR(512) NOT NULL,
                     time_start FLOAT NOT NULL,
                     time_end FLOAT NOT NULL,
