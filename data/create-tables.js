@@ -22,7 +22,7 @@ async function run() {
                   email VARCHAR(512),
                   pic_url VARCHAR(512),
                   color VARCHAR(512),
-                  access_token VARCHAR(512),
+                  access_token VARCHAR,
                   account_id VARCHAR(512) NOT NULL
           );
                 CREATE TABLE meetings (
