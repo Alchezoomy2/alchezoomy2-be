@@ -23,7 +23,9 @@ async function run() {
                   pic_url VARCHAR(512),
                   color VARCHAR(512),
                   access_token VARCHAR,
-                  account_id VARCHAR(512) NOT NULL
+                  account_id VARCHAR(512) NOT NULL,
+                  last_update VARCHAR(256) NOT NULL,
+                  meetings_list JSON
           );
                 CREATE TABLE meetings (
                     id SERIAL PRIMARY KEY NOT NULL,
