@@ -8,7 +8,7 @@ async function run() {
     await client.connect();
 
     await client.query(`
-            DROP TABLE IF EXISTS users CASCADE;
+            DROP TABLE IF EXISTS students CASCADE;
             DROP TABLE IF EXISTS meetings CASCADE;
             DROP TABLE IF EXISTS transcripts CASCADE;
             DROP TABLE IF EXISTS chats CASCADE;

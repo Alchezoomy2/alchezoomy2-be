@@ -10,22 +10,29 @@ async function run() {
 
     // run a query to create tables
     await client.query(`
-                CREATE TABLE users (
+                CREATE TABLE students (
                     id SERIAL PRIMARY KEY,
+                    user_name VARCHAR(512) NOT NULL,
+                    pic_url VARCHAR(512),
+                    student_id VARCHAR(512) NOT NULL,
                     email VARCHAR(256) NOT NULL,
-                    hash VARCHAR(512) NOT NULL
-                );           
+                    account_id VARCHAR(512) NOT NULL,
+                    access_token VARCHAR,
+                    permissions INTEGER []
+                    );          
+                                      
                 CREATE TABLE teachers (
-                  id SERIAL PRIMARY KEY NOT NULL,
-                  host_id VARCHAR(512) NOT NULL,
-                  user_name VARCHAR(512) NOT NULL,
-                  email VARCHAR(512),
-                  pic_url VARCHAR(512),
-                  color VARCHAR(512),
-                  access_token VARCHAR,
-                  account_id VARCHAR(512) NOT NULL,
-                  last_update VARCHAR(256) NOT NULL
-          );
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    host_id VARCHAR(512) NOT NULL,
+                    user_name VARCHAR(512) NOT NULL,
+                    email VARCHAR(512),
+                    pic_url VARCHAR(512),
+                    color VARCHAR(512),
+                    access_token VARCHAR,
+                    account_id VARCHAR(512) NOT NULL,
+                    last_update VARCHAR(256) NOT NULL
+                    );
+
                 CREATE TABLE meetings (
                     id SERIAL PRIMARY KEY NOT NULL,
                     published BOOLEAN NOT NULL,
@@ -45,7 +52,8 @@ async function run() {
                     chat_url VARCHAR,
                     meeting_views INTEGER NOT NULL,
                     meeting_favs INTEGER NOT NULL
-            );
+                    );
+
                 CREATE TABLE transcripts (
                     id SERIAL PRIMARY KEY NOT NULL,
                     meeting_id INTEGER NOT NULL,
@@ -54,7 +62,8 @@ async function run() {
                     time_start FLOAT NOT NULL,
                     time_end FLOAT NOT NULL,
                     text VARCHAR NOT NULL
-          );
+                    );
+
                 CREATE TABLE chats (
                     id SERIAL PRIMARY KEY NOT NULL,
                     meeting_id INTEGER NOT NULL,
@@ -62,27 +71,29 @@ async function run() {
                     timestamp VARCHAR(512) NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL
-          );
+                    );
+
                 CREATE TABLE favorites (
                     id SERIAL PRIMARY KEY NOT NULL,
                     uuid VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
                     owner_id INTEGER NOT NULL REFERENCES users(id)
-          );
+                    );
+
                 CREATE TABLE bookmarks (
-                  id SERIAL PRIMARY KEY NOT NULL,
-                  uuid VARCHAR(512) NOT NULL,
-                  host_id VARCHAR(512) NOT NULL,
-                  topic VARCHAR(512) NOT NULL,
-                  start_time VARCHAR(512) NOT NULL,
-                  identifier VARCHAR(512) NOT NULL,
-                  time_start FLOAT NOT NULL,
-                  speaker VARCHAR(512) NOT NULL,
-                  text VARCHAR(512) NOT NULL,
-                  comments VARCHAR(512),
-                  owner_id INTEGER NOT NULL REFERENCES users(id)
-        );
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    uuid VARCHAR(512) NOT NULL,
+                    host_id VARCHAR(512) NOT NULL,
+                    topic VARCHAR(512) NOT NULL,
+                    start_time VARCHAR(512) NOT NULL,
+                    identifier VARCHAR(512) NOT NULL,
+                    time_start FLOAT NOT NULL,
+                    speaker VARCHAR(512) NOT NULL,
+                    text VARCHAR(512) NOT NULL,
+                    comments VARCHAR(512),
+                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                    );
         `);
 
     console.log('create tables complete');
