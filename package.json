@@ -1,7 +1,7 @@
 {
   "name": "alchezoomy",
   "version": "1.0.0",
-  "description": "",
+  "description": "#### Continuing the work of AlcheZOOMy",
   "main": "server.js",
   "scripts": {
     "test": "jest --verbose --runInBand",
@@ -37,10 +37,24 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "node": "^15.2.1",
     "node-fetch": "^2.6.1",
     "node-webvtt": "^1.9.3",
     "pg": "^8.5.1",
+    "pg-format": "^1.0.4",
+    "pg-promise": "^10.8.0",
     "stopword": "^1.0.3",
     "superagent": "^6.1.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlcheZoomy-2-0/zoom-search-sql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AlcheZoomy-2-0/zoom-search-sql/issues"
+  },
+  "homepage": "https://github.com/AlcheZoomy-2-0/zoom-search-sql#readme"
 }
