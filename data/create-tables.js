@@ -43,6 +43,7 @@ async function run() {
                     pic_url VARCHAR(512),
                     color VARCHAR(512),
                     topic VARCHAR(512) NOT NULL,
+                    display_time TEXT NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
                     duration INTEGER NOT NULL,
                     share_url VARCHAR NOT NULL,
