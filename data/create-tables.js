@@ -18,7 +18,8 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     account_id VARCHAR(512) NOT NULL,
                     access_token VARCHAR,
-                    permissions INTEGER []
+                    permissions INTEGER [],
+                    last_update TEXT NOT NULL
                     );          
                                       
                 CREATE TABLE teachers (
