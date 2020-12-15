@@ -44,7 +44,8 @@
     "pg-format": "^1.0.4",
     "pg-promise": "^10.8.0",
     "stopword": "^1.0.3",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "timezone": "^1.0.23"
   },
   "directories": {
     "lib": "lib"
