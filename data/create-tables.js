@@ -30,6 +30,7 @@ async function run() {
                     color VARCHAR(512),
                     access_token VARCHAR,
                     account_id VARCHAR(512) NOT NULL,
+                    timezone TEXT NOT NULL,
                     last_update VARCHAR(256) NOT NULL
                     );
 
