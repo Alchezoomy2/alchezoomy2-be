@@ -18,7 +18,8 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     account_id VARCHAR(512) NOT NULL,
                     access_token VARCHAR,
-                    permissions INTEGER []
+                    permissions INTEGER [],
+                    last_update TEXT NOT NULL
                     );          
                                       
                 CREATE TABLE teachers (
@@ -30,6 +31,7 @@ async function run() {
                     color VARCHAR(512),
                     access_token VARCHAR,
                     account_id VARCHAR(512) NOT NULL,
+                    timezone TEXT NOT NULL,
                     last_update VARCHAR(256) NOT NULL
                     );
 
@@ -43,6 +45,7 @@ async function run() {
                     pic_url VARCHAR(512),
                     color VARCHAR(512),
                     topic VARCHAR(512) NOT NULL,
+                    display_time TEXT NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
                     duration INTEGER NOT NULL,
                     share_url VARCHAR NOT NULL,
