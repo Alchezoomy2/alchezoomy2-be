@@ -81,7 +81,7 @@ async function run() {
                     uuid VARCHAR(512) NOT NULL,
                     topic VARCHAR(512) NOT NULL,
                     start_time VARCHAR(512) NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                    owner_id INTEGER NOT NULL REFERENCES teachers(id)
                     );
 
                 CREATE TABLE bookmarks (
@@ -95,7 +95,7 @@ async function run() {
                     speaker VARCHAR(512) NOT NULL,
                     text VARCHAR(512) NOT NULL,
                     comments VARCHAR(512),
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
+                    owner_id INTEGER NOT NULL REFERENCES teachers(id)
                     );
         `);
 
