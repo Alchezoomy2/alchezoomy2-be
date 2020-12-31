@@ -8,8 +8,8 @@ const path = require('path');
 const PORT = process.env.PORT || 7890;
 
 const sslServer = https.createServer({
-  key: fs.readFileSync(path.join(__dirname, '/etc/letsencrypt/live/api.alchezoomy.com/', 'privkey.pem')),
-  cert: fs.readFileSync(path.join(__dirname, '/etc/letsencrypt/live/api.alchezoomy.com/', 'fullchain.pem'))
+  key: fs.readFileSync(path.join(__dirname, '/cert/api.alchezoomy.com/', 'privkey.pem')),
+  cert: fs.readFileSync(path.join(__dirname, '/cert/api.alchezoomy.com/', 'cert.pem'))
 }, app)
 
 
