@@ -73,7 +73,9 @@ async function run() {
                     teacher_id INTEGER NOT NULL,
                     timestamp VARCHAR(512) NOT NULL,
                     speaker VARCHAR(512) NOT NULL,
-                    text VARCHAR(512) NOT NULL
+                    text VARCHAR(512) NOT NULL,
+                    bookmark BOOLEAN NOT NULL,
+                    comment TEXT NOT NULL
                     );
 
                 CREATE TABLE favorites (
@@ -84,19 +86,6 @@ async function run() {
                     owner_id INTEGER NOT NULL REFERENCES teachers(id)
                     );
 
-                CREATE TABLE bookmarks (
-                    id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
-                    host_id VARCHAR(512) NOT NULL,
-                    topic VARCHAR(512) NOT NULL,
-                    start_time VARCHAR(512) NOT NULL,
-                    identifier VARCHAR(512) NOT NULL,
-                    time_start FLOAT NOT NULL,
-                    speaker VARCHAR(512) NOT NULL,
-                    text VARCHAR(512) NOT NULL,
-                    comments VARCHAR(512),
-                    owner_id INTEGER NOT NULL REFERENCES teachers(id)
-                    );
         `);
 
     console.log('create tables complete');
