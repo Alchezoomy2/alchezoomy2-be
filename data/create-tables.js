@@ -86,16 +86,8 @@ async function run() {
 
                 CREATE TABLE bookmarks (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
-                    host_id VARCHAR(512) NOT NULL,
-                    topic VARCHAR(512) NOT NULL,
-                    start_time VARCHAR(512) NOT NULL,
-                    identifier VARCHAR(512) NOT NULL,
-                    time_start FLOAT NOT NULL,
-                    speaker VARCHAR(512) NOT NULL,
-                    text VARCHAR(512) NOT NULL,
-                    comments VARCHAR(512),
-                    owner_id INTEGER NOT NULL REFERENCES teachers(id)
+                    chat_id INTEGER NOT NULL,
+                    student_id INTEGER NOT NULL
                     );
         `);
 
