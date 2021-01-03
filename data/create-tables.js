@@ -87,7 +87,8 @@ async function run() {
                 CREATE TABLE bookmarks (
                     id SERIAL PRIMARY KEY NOT NULL,
                     chat_id INTEGER NOT NULL,
-                    student_id INTEGER NOT NULL
+                    student_id INTEGER NOT NULL,
+                    comment TEXT
                     );
         `);
 
