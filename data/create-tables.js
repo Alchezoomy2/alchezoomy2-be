@@ -19,6 +19,7 @@ async function run() {
                     account_id VARCHAR(512) NOT NULL,
                     access_token VARCHAR,
                     permissions INTEGER [],
+                    account_created TEXT NOT NULL,
                     last_update TEXT NOT NULL
                     );          
                                       
@@ -32,6 +33,7 @@ async function run() {
                     access_token VARCHAR,
                     account_id VARCHAR(512) NOT NULL,
                     timezone TEXT NOT NULL,
+                    account_created TEXT NOT NULL,
                     last_update VARCHAR(256) NOT NULL
                     );
 
