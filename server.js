@@ -13,8 +13,8 @@ const sslServer = https.createServer({
 }, app)
 
 
-app.listen(PORT, () => {
-  console.log(`insecure server on ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`insecure server on ${PORT}`);
+// });
 
 sslServer.listen(3443, () => console.log('secure server on port 3443'))
