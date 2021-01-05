@@ -20,6 +20,7 @@ async function run() {
                     access_token VARCHAR,
                     permissions INTEGER [],
                     account_created TEXT NOT NULL,
+                    timezone TEXT NOT NULL,
                     last_update TEXT NOT NULL
                     );          
                                       
