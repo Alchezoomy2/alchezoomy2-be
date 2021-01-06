@@ -82,10 +82,9 @@ async function run() {
 
                 CREATE TABLE favorites (
                     id SERIAL PRIMARY KEY NOT NULL,
-                    uuid VARCHAR(512) NOT NULL,
-                    topic VARCHAR(512) NOT NULL,
-                    start_time VARCHAR(512) NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES teachers(id)
+                    meeting_id INTEGER NOT NULL,
+                    student_id INTEGER NOT NULL,
+                    comment TEXT
                     );
 
                 CREATE TABLE bookmarks (
