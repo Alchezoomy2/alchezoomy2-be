@@ -1,5 +1,5 @@
-const client = require('../client.js');
-const isStudentAlsoTeacher = require('./isStudentAlsoTeacher.js');
+const client = require('../lib/client.js');
+const isStudentAlsoTeacher = require('../lib/utils/isStudentAlsoTeacher.js');
 
 module.exports = async (newStudentInfo) => {
 
