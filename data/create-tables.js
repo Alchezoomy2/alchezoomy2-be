@@ -18,7 +18,6 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     account_id VARCHAR(512) NOT NULL,
                     access_token VARCHAR,
-                    permissions INTEGER [],
                     account_created TEXT NOT NULL,
                     timezone TEXT NOT NULL,
                     last_update TEXT NOT NULL
@@ -93,6 +92,13 @@ async function run() {
                     student_id INTEGER NOT NULL,
                     comment TEXT
                     );
+
+                  CREATE TABLE subscriptions (
+                    id SERIAL PRIMARY KEY NOT NULL,
+                    student_id INTEGER NOT NULL,
+                    teacher_id INTEGER NOT NULL,
+                    creation_date VARCHAR NOT NULL
+                  )
         `);
 
     console.log('create tables complete');
