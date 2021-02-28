@@ -30,7 +30,6 @@ async function run() {
                     email VARCHAR(512),
                     pic_url VARCHAR(512),
                     color VARCHAR(512),
-                    access_token VARCHAR,
                     account_id VARCHAR(512) NOT NULL,
                     timezone TEXT NOT NULL,
                     account_created TEXT NOT NULL,
@@ -56,7 +55,8 @@ async function run() {
                     transcript_url VARCHAR,
                     chat_url VARCHAR,
                     meeting_views INTEGER NOT NULL,
-                    meeting_favs INTEGER NOT NULL
+                    meeting_favs INTEGER NOT NULL,
+                    zoom_meeting_id VARCHAR
                     );
 
                 CREATE TABLE transcripts (
