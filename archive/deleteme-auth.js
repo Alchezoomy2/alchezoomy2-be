@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const Teacher = require('../models/Teacher');
+const Teacher = require('../lib/models/Teacher');
 // const ensureAuth = require('../auth/ensure-auth');
 const fetch = require('superagent');
 
