@@ -6,8 +6,8 @@ const app = require('./lib/app');
 const path = require('path');
 
 const sslServer = https.createServer({
-  key: fs.readFileSync(path.join(__dirname, './etc/letsencrypt/live/api.alchemylectures.com', 'privkey.pem')),
-  cert: fs.readFileSync(path.join(__dirname, './etc/letsencrypt/live/api.alchemylectures.com', 'cert.pem'))
+  key: fs.readFileSync(path.join(__dirname, '/etc/letsencrypt/live/api.alchemylectures.com', 'privkey.pem')),
+  cert: fs.readFileSync(path.join(__dirname, '/etc/letsencrypt/live/api.alchemylectures.com', 'cert.pem'))
 }, app)
 
 
