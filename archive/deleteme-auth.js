@@ -33,7 +33,8 @@ module.exports = Router()
             res.json(teacherExists)
         } catch (e) {
 
-            res.status(500).json({ error: e.message });
+            res.json({ error: e });
+
         }
     })
 
@@ -43,6 +44,7 @@ module.exports = Router()
 
         } catch (e) {
 
-            res.status(500).json({ error: e.message });
+            res.json({ error: e });
+
         }
     })
