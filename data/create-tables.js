@@ -12,15 +12,8 @@ async function run() {
     await client.query(`
                 CREATE TABLE students (
                     id SERIAL PRIMARY KEY,
-                    user_name VARCHAR(512) NOT NULL,
-                    pic_url VARCHAR(512),
-                    student_id VARCHAR(512) NOT NULL,
-                    email VARCHAR(256) NOT NULL,
-                    account_id VARCHAR(512) NOT NULL,
-                    access_token VARCHAR,
-                    account_created TEXT NOT NULL,
-                    timezone TEXT NOT NULL,
-                    last_update TEXT NOT NULL
+                    student_email TEXT NOT NULL,
+                    password_hash TEXT NOT NULL
                     );          
                                       
                 CREATE TABLE teachers (
