@@ -49,7 +49,7 @@ async function run() {
                     chat_url VARCHAR,
                     meeting_views INTEGER NOT NULL,
                     meeting_favs INTEGER NOT NULL,
-                    zoom_meeting_id LONG
+                    zoom_meeting_id BIGINT
                     );
 
                 CREATE TABLE transcripts (
