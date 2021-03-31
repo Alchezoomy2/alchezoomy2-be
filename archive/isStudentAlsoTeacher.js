@@ -1,4 +1,4 @@
-const client = require('../client.js');
+const client = require('../lib/client.js');
 
 module.exports = async (studentId) => {
 
