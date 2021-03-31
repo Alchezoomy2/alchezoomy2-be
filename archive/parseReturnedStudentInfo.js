@@ -1,5 +1,5 @@
-const client = require('../client.js');
-const Student = require('../models/Student')
+const client = require('../lib/client.js');
+const Student = require('../lib/models/Student')
 
 module.exports = async (studentObj, oauthToken) => {
 
