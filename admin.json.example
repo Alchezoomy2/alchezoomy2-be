@@ -1,4 +1,4 @@
 {
-    "userName": "admin",
-    "passwordHash": "$2a$04$Pq2IhmhlcBu7.HgkhgAmp.pbg4zLN1hm3uExGvUHqKPcMnCO2mIva"
+    "admin": "$2a$04$Pq2IhmhlcBu7.HgkhgAmp.pbg4zLN1hm3uExGvUHqKPcMnCO2mIva"
+    "master": "$2a$04$Pq2IhmhlcBu7.HgkhgAmp.pbg4zLN1hm3uExGvUHqKPcMnCO2mIva"
 }
