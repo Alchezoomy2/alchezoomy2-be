@@ -10,7 +10,7 @@ const sslServer = https.createServer({
   cert: fs.readFileSync(path.join(__dirname, '../../../etc/letsencrypt/live/api.alchemylectures.com', 'cert.pem'))
 }, app)
 
-console.log(fs.readFileSync(path.join(__dirname, '../../../etc/letsencrypt/live/api.alchemylectures.com', 'privkey.pem')))
-console.log(fs.readFileSync(path.join(__dirname, '../../../etc/letsencrypt/live/api.alchemylectures.com', 'cert.pem')))
+console.log(fs.readFile(path.join(__dirname, '../../../etc/letsencrypt/live/api.alchemylectures.com', 'privkey.pem')))
+console.log(fs.readFile(path.join(__dirname, '../../../etc/letsencrypt/live/api.alchemylectures.com', 'cert.pem')))
 
 sslServer.listen(3443, () => console.log('secure server on port 3443'))
