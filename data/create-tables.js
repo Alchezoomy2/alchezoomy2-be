@@ -34,8 +34,6 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     published BOOLEAN NOT NULL,
                     teacher_id INTEGER NOT NULL,
-                    host_id VARCHAR(512) NOT NULL,
-                    account_id VARCHAR(512) NOT NULL,
                     user_name VARCHAR(512),
                     pic_url VARCHAR(512),
                     color VARCHAR(512),
