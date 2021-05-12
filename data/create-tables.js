@@ -53,6 +53,7 @@ async function run() {
                     meeting_id INTEGER NOT NULL,
                     teacher_id INTEGER NOT NULL,
                     identifier VARCHAR(512) NOT NULL,
+                    speaker TEXT NOT NULL,
                     time_start FLOAT NOT NULL,
                     timestamp TEXT NOT NULL,
                     time_end FLOAT NOT NULL,
