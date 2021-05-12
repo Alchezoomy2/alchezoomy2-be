@@ -42,6 +42,7 @@ async function run() {
                     video_url VARCHAR,
                     audio_url VARCHAR,
                     transcript_url VARCHAR,
+                    media_url TEXT,
                     chat_url VARCHAR,
                     meeting_views INTEGER NOT NULL,
                     meeting_favs INTEGER NOT NULL,
