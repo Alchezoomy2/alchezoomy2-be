@@ -54,6 +54,7 @@ async function run() {
                     teacher_id INTEGER NOT NULL,
                     identifier VARCHAR(512) NOT NULL,
                     time_start FLOAT NOT NULL,
+                    timestamp TEXT NOT NULL,
                     time_end FLOAT NOT NULL,
                     text VARCHAR NOT NULL
                     );
