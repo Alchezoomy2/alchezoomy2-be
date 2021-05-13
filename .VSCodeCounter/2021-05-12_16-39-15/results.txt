@@ -1,0 +1,79 @@
+Date : 2021-05-12 16:39:15
+Directory : /Users/paulstevens/Developer/alchezoomy2-be/lib
+Total : 50 files,  2053 codes, 59 comments, 593 blanks, all 2705 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         50 |      2,053 |         59 |        593 |      2,705 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                       | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                          |         50 |      2,053 |         59 |        593 |      2,705 |
+| auth                                                                                       |         11 |        179 |         23 |         62 |        264 |
+| controllers                                                                                |         12 |        578 |          1 |        194 |        773 |
+| middleware                                                                                 |          2 |         14 |          1 |          5 |         20 |
+| models                                                                                     |          7 |        867 |         13 |        194 |      1,074 |
+| utils                                                                                      |         15 |        362 |          9 |        115 |        486 |
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                   | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/app.js                                     | JavaScript |         35 |          8 |         16 |         59 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/admin-auth.js                         | JavaScript |         11 |          0 |          4 |         15 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/ensure-admin-auth.js                  | JavaScript |         11 |          0 |          1 |         12 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/ensure-student-auth.js                | JavaScript |         11 |          0 |          1 |         12 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/ensure-teacher-auth.js                | JavaScript |         11 |          0 |          3 |         14 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/invite-auth.js                        | JavaScript |         16 |          0 |          4 |         20 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/jwt.js                                | JavaScript |         10 |          0 |          2 |         12 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/student-auth.js                       | JavaScript |         14 |         23 |         13 |         50 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/student-invite-auth.js                | JavaScript |         16 |          0 |          4 |         20 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/student-reset-hash.js                 | JavaScript |         15 |          0 |          4 |         19 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/teacher-auth.js                       | JavaScript |         49 |          0 |         22 |         71 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/auth/teacher-invite-auth.js                | JavaScript |         15 |          0 |          4 |         19 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/client.js                                  | JavaScript |          8 |          4 |          2 |         14 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/admin-auth-routes.js           | JavaScript |         48 |          0 |         12 |         60 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/admin-s3-routes.js             | JavaScript |         24 |          0 |          3 |         27 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/admin-student-routes.js        | JavaScript |         22 |          0 |          4 |         26 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/admin-teacher-routes.js        | JavaScript |         37 |          0 |          8 |         45 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/deauthorize.js                 | JavaScript |         38 |          0 |         13 |         51 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/student-bookmark-routes.js     | JavaScript |         35 |          0 |          7 |         42 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/student-favorite-routes.js     | JavaScript |         34 |          0 |          9 |         43 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/student-meetings-routes.js     | JavaScript |         24 |          0 |         15 |         39 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/student-routes.js              | JavaScript |        131 |          1 |         41 |        173 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/teacher-meetings-routes.js     | JavaScript |         64 |          0 |         35 |         99 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/teacher-routes.js              | JavaScript |         82 |          0 |         34 |        116 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/controllers/teacher-subscription-routes.js | JavaScript |         39 |          0 |         13 |         52 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/emoji.js                                   | JavaScript |         10 |          0 |          5 |         15 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/middleware/error.js                        | JavaScript |          9 |          1 |          4 |         14 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/middleware/not-found.js                    | JavaScript |          5 |          0 |          1 |          6 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Admin.js                            | JavaScript |         48 |          0 |         22 |         70 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Bookmark.js                         | JavaScript |        101 |          0 |         10 |        111 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Favorite.js                         | JavaScript |         84 |          0 |         13 |         97 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Meeting.js                          | JavaScript |        244 |          2 |         48 |        294 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Student.js                          | JavaScript |        189 |          0 |         51 |        240 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Subscription.js                     | JavaScript |         80 |          0 |         19 |         99 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/models/Teacher.js                          | JavaScript |        121 |         11 |         31 |        163 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/attachCookie.js                      | JavaScript |          9 |          0 |          2 |         11 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/deleteFromS3.js                      | JavaScript |         18 |          0 |          4 |         22 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/fetchColorPalette.js                 | JavaScript |         13 |          0 |          4 |         17 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/insertNewChat.js                     | JavaScript |         27 |          0 |         14 |         41 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/insertNewTranscript.js               | JavaScript |         42 |          0 |         12 |         54 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/inviteStudent.js                     | JavaScript |         31 |          0 |          8 |         39 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/inviteTeacher.js                     | JavaScript |         30 |          0 |          8 |         38 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/logTeacherAuth.js                    | JavaScript |          5 |          7 |          3 |         15 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/parseMeetingObj.js                   | JavaScript |         37 |          0 |         12 |         49 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/parseNewTeacherInfo.js               | JavaScript |         28 |          0 |          8 |         36 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/parseReturnedTeacherInfo.js          | JavaScript |         37 |          1 |         12 |         50 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/refreshToken.js                      | JavaScript |         17 |          1 |          8 |         26 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/resetStudentPassword.js              | JavaScript |         29 |          0 |          8 |         37 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/sendToS3.js                          | JavaScript |         27 |          0 |         10 |         37 |
+| /Users/paulstevens/Developer/alchezoomy2-be/lib/utils/updateZoomInfo.js                    | JavaScript |         12 |          0 |          2 |         14 |
+| Total                                                                                      |            |      2,053 |         59 |        593 |      2,705 |
++--------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
